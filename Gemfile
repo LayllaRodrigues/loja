@@ -78,6 +78,6 @@ group :test do
 end
 
 
-  gem 'pg', '~> 0.18.4'
+  gem 'pg', '~> 1.1.0'
 
 
