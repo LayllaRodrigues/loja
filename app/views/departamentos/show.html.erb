@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="alert alert-info" role="alert">
+  <h1 class="alert-heading">Produtos por departamentos</h1>
+  <p><strong> Visualização dos produtos por departamento.</strong></p>
+</div>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -16,7 +21,7 @@
     </tbody>
 </table>
 
-<%= link_to 'Editar', edit_departamento_path(@departamento), class:"btn btn-warning" %> |
+<%= link_to 'Editar', edit_departamento_path(@departamento), class:"btn btn-warning" %> 
 <%= link_to 'Voltar', departamentos_path, class:"btn btn-success" %>
 
 

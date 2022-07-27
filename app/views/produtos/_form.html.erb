@@ -4,11 +4,18 @@
     </div>
 <% end %>
 
+
+<div class="alert alert-info" role="alert">
+  <h1 class="alert-heading">Criar novo produto</h1>
+  <p><strong> Entrada no estoque.</strong></p>
+
+</div>
+
 <%= form_for @produto do |form| %>
     <div class="row">
         <div class="col-sm-8">
             <div class="form-group">
-                <%= form.label :nome %> 
+               <%= form.label :nome %> 
                 <%= form.text_field :nome, class:"form-control" %>
             </div>
         </div>
@@ -49,5 +56,8 @@
         </div>
     </div>
 
-    <%= form.submit texto_da_acao, class:"btn btn-primary" %>
+    
+    <%= form.submit texto_da_acao, class:"btn btn-success" %>
+    
+
 <% end %>
