@@ -1,13 +1,16 @@
 class DepartamentosController < ApplicationController
-  before_action :set_departamento, only: %i[ show edit update destroy ]
+  before_action :set_departamento, only: [:show, :edit, :update, :destroy]
 
-  # GET /departamentos or /departamentos.json
+  # GET /departamentos
+  # GET /departamentos.json
   def index
     @departamentos = Departamento.all
   end
 
-  # GET /departamentos/1 or /departamentos/1.json
+  # GET /departamentos/1
+  # GET /departamentos/1.json
   def show
+    @produtos_por_departamento = Produto.where("departamento_id = ?", params[:id])
   end
 
   # GET /departamentos/new
@@ -19,40 +22,42 @@ class DepartamentosController < ApplicationController
   def edit
   end
 
-  # POST /departamentos or /departamentos.json
+  # POST /departamentos
+  # POST /departamentos.json
   def create
     @departamento = Departamento.new(departamento_params)
 
     respond_to do |format|
       if @departamento.save
-        format.html { redirect_to departamento_url(@departamento), notice: "Departamento was successfully created." }
+        format.html { redirect_to @departamento, notice: 'Departamento was successfully created.' }
         format.json { render :show, status: :created, location: @departamento }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @departamento.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /departamentos/1 or /departamentos/1.json
+  # PATCH/PUT /departamentos/1
+  # PATCH/PUT /departamentos/1.json
   def update
     respond_to do |format|
       if @departamento.update(departamento_params)
-        format.html { redirect_to departamento_url(@departamento), notice: "Departamento was successfully updated." }
+        format.html { redirect_to @departamento, notice: 'Departamento was successfully updated.' }
         format.json { render :show, status: :ok, location: @departamento }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit }
         format.json { render json: @departamento.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /departamentos/1 or /departamentos/1.json
+  # DELETE /departamentos/1
+  # DELETE /departamentos/1.json
   def destroy
     @departamento.destroy
-
     respond_to do |format|
-      format.html { redirect_to departamentos_url, notice: "Departamento was successfully destroyed." }
+      format.html { redirect_to departamentos_url, notice: 'Departamento was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -63,7 +68,7 @@ class DepartamentosController < ApplicationController
       @departamento = Departamento.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def departamento_params
       params.require(:departamento).permit(:nome)
     end

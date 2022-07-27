@@ -59,4 +59,5 @@ class ProdutosController < ApplicationController
         @departamentos = Departamento.all 
         render view
     end
+    
 end
