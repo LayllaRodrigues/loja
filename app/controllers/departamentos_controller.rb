@@ -57,7 +57,7 @@ class DepartamentosController < ApplicationController
   def destroy
     @departamento.destroy
     respond_to do |format|
-      format.html { redirect_to departamentos_url, notice: 'Departamento deletado com sucesso.' }
+      format.html { redirect_to departamentos_url, notice: 'Departamento deletado.' }
       format.json { head :no_content }
     end
   end

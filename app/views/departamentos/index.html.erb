@@ -16,7 +16,7 @@
         <td><%= departamento.nome %></td>
         <td><%= link_to 'Ver departamento', departamento, class:"btn btn-success" %></td>
         <td><%= link_to 'Editar', edit_departamento_path(departamento), class:"btn btn-warning" %></td>
-        <td><%= link_to 'Deletar', departamento, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        <td><%= link_to 'Deletar', departamento, method: :delete, data: { confirm: 'Tem certeza que deseja deletar o departamento e todos os itens nele?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= button_to 'Criar novo departamento', new_departamento_path, class:"btn btn-primary" %>
+<%= button_to 'Criar novo departamento', new_departamento_path, class:"btn btn-primary",  method: :get%>
