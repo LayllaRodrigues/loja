@@ -30,11 +30,14 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 
 `- Rails         `
+
 `- Sqlite        `
+
 `- bootstrap     `
+
 `- HTML          `
 
-#### 🧭 Rodando a aplicação web 
+## 🧭 Rodando a aplicação web 
 
 ```bash
 
