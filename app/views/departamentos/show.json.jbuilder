@@ -1,1 +1,1 @@
-json.partial! "departamentos/departamento", departamento: @departamento
+# json.partial! "departamentos/departamento", departamento: @departamento
